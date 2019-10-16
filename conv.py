@@ -2,7 +2,7 @@ import os
 import json
 
 imp = "import"
-path = "/Users/marcinzachura/PycharmProjects/untitled/NOWY"
+path = "/Users/marcinzachura/PycharmProjects/untitled/grafy/Grafy"
 files = []
 words = []
 fhmap = {}
@@ -64,4 +64,3 @@ def saveToFile():
 
 
 main()
-print(lineCounter)
