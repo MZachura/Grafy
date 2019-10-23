@@ -34,6 +34,8 @@ def drawGraph():
 
     cluster_6=pydot.Cluster('djs',label='data.json', style="filled",color="white")
     cluster_6.add_node(pydot.Node('djso', label='1', shape="circle", style="filled", fillcolor="white"))
+    cluster_7=pydot.Cluster('fjs',label='func.json', style="filled",color="white")
+    cluster_7.add_node(pydot.Node('fjs', label='1', shape="circle", style="filled", fillcolor="white"))
 
     graph1.add_subgraph(cluster_1)
     graph1.add_subgraph(cluster_2)
@@ -41,6 +43,7 @@ def drawGraph():
     graph1.add_subgraph(cluster_4)
     graph1.add_subgraph(cluster_5)
     graph1.add_subgraph(cluster_6)
+    graph1.add_subgraph(cluster_7)
 
     graph1.add_edge(pydot.Edge("co", "jso",label=datastore['conv.py']['json'], fontsize="10.0"))
     graph1.add_edge(pydot.Edge("co", "os",label=datastore['conv.py']['os'], fontsize="10.0"))
@@ -49,6 +52,7 @@ def drawGraph():
     graph1.add_edge(pydot.Edge("co", "djso",label='1', fontsize="10.0"))
     graph1.add_edge(pydot.Edge("djso", "gr",label='1', fontsize="10.0"))
     graph1.add_edge(pydot.Edge("co", "gr",label='1', fontsize="10.0"))
+    graph1.add_edge(pydot.Edge("co", "fjs",label='1', fontsize="10.0"))
 
     graph1.write_png('graf.png')
 
