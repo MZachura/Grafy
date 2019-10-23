@@ -11,7 +11,7 @@ def maing():
 
     with open('func.json', 'r') as f:
         fundata = json.load(f)
-    drawGraph()
+    #drawGraph()
 
 def drawGraph():
     global datastore

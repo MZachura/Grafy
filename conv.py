@@ -1,6 +1,6 @@
 import os
 import json
-
+from graph2 import drawGraph
 
 df = "def"
 imp = "import"
@@ -29,7 +29,7 @@ def main():
             saveToDictionary(fil)
             words = []
     saveToFile()
-    print(func_names)
+    drawGraph()
 
 
 def getFiles():
@@ -86,6 +86,6 @@ def saveToFile():
     with open('data.json', 'w') as js_file:
         data = json.dump(fhmap, js_file)
     with open('func.json', 'w') as js_file:
-        data = json.dump(all_func_dict, js_file,indent=2,)
+        data = json.dump(all_func_dict, js_file)
 
 main()

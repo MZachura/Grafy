@@ -1,13 +1,1 @@
-{
-  "graph2.py": {
-    "maing():": 1,
-    "drawGraph():": 1
-  },
-  "conv.py": {
-    "main():": 1,
-    "getFiles():": 1,
-    "getWords():": 1,
-    "saveToDictionary(fil):": 1,
-    "saveToFile():": 1
-  }
-}
+{"graph2.py": {"maing():": 1, "drawGraph():": 1}, "conv.py": {"main():": 1, "getFiles():": 1, "getWords():": 1, "saveToDictionary(fil):": 1, "saveToFile():": 1}}
