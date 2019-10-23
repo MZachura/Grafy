@@ -53,6 +53,7 @@ def drawGraph():
     graph1.add_edge(pydot.Edge("djso", "gr",label='1', fontsize="10.0"))
     graph1.add_edge(pydot.Edge("co", "gr",label='1', fontsize="10.0"))
     graph1.add_edge(pydot.Edge("co", "fjs",label='1', fontsize="10.0"))
+    graph1.add_edge(pydot.Edge("fjs", "gr",label='1', fontsize="10.0"))
 
     graph1.write_png('graf.png')
 
