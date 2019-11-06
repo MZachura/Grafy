@@ -92,4 +92,39 @@ def drawGraph():
 
     graph2.write_png('graffunkcji.png')
 
+
+
+
+    graph3 = pydot.Dot(graph_type='digraph')
+    cluster_1=pydot.Cluster('graf',label='graph2.py', style="filled",color="white")
+    cluster_1.add_node(pydot.Node('gr', label=datastore['graph2.py']['lines'],shape="circle", style="filled", fillcolor="white"))
+
+    cluster_2=pydot.Cluster('conv',label='conv.py', style="filled",color="white")
+    cluster_2.add_node(pydot.Node('co', label=datastore['conv.py']['lines'], shape="circle", style="filled", fillcolor="white"))
+
+    cluster_3=pydot.Cluster('pyd',label='pydot', style="filled",color="white")
+    cluster_3.add_node(pydot.Node('pydo', label='1078',shape="circle", style="filled", fillcolor="white"))
+
+    cluster_4=pydot.Cluster('o',label='os', style="filled",color="white")
+    cluster_4.add_node(pydot.Node('os', label='1947', shape="circle", style="filled", fillcolor="white"))
+
+    cluster_5=pydot.Cluster('js',label='json', style="filled",color="white")
+    cluster_5.add_node(pydot.Node('jso', label='1477', shape="circle", style="filled", fillcolor="white"))
+
+
+    graph3.add_subgraph(cluster_1)
+    graph3.add_subgraph(cluster_2)
+    graph3.add_subgraph(cluster_3)
+    graph3.add_subgraph(cluster_4)
+    graph3.add_subgraph(cluster_5)
+
+
+    graph3.add_edge(pydot.Edge("co", "jso",label=datastore['conv.py']['json'], fontsize="10.0"))
+    graph3.add_edge(pydot.Edge("co", "os",label=datastore['conv.py']['os'], fontsize="10.0"))
+    graph3.add_edge(pydot.Edge("gr", "pydo",label=datastore['graph2.py']['pydot'],  fontsize="10.0"))
+    graph3.add_edge(pydot.Edge("gr", "jso",label=datastore['graph2.py']['json'], fontsize="10.0"))
+    graph3.add_edge(pydot.Edge("co", "gr",label='1', fontsize="10.0"))
+
+
+    graph3.write_png('grafmodulu.png')
 maing()
