@@ -1,1 +1,17 @@
-{"graph2.py": {"lines": 130, "json": 13, "pydot": 59}, "conv.py": {"lines": 91, "os": 2, "json": 5, "graph2": 1}}
+{
+  "graph2.py": {
+    "lines": 118,
+    "json": 10,
+    "pydot": 55
+  },
+  "graph3.py": {
+    "lines": 27,
+    "pydot": 13
+  },
+  "conv.py": {
+    "lines": 94,
+    "os": 2,
+    "json": 5,
+    "graph2": 3
+  }
+}

@@ -1,91 +1,94 @@
 import os
 import json
-from graph2 import drawGraph
+from graph2 import Graph2
 
-df = "def"
-imp = "import"
-path = "/Users/marcinzachura/PycharmProjects/untitled/grafy/Grafy"
-files = []
-words = []
-fhmap = {}
-hmap = {}
-counter = 0
-lines = ()
-lineCounter = 0
+class Conv:
 
-func_names = []
-func_counter = 0
-func_dict = {}
-all_func_dict = {}
-
-def main():
-    global lines
-    global words
-    getFiles()
-    for fil in files:
-        if 'pyparsing.py' not in str(fil):
-            lines = tuple(open(str(fil), 'r', encoding='latin-1'))
-            getWords()
-            saveToDictionary(fil)
-            words = []
-    saveToFile()
-    drawGraph()
+    def __init__(self) :
+        self.df = "def"
+        self.imp = "import"
+        self.path = "/Users/marcinzachura/PycharmProjects/untitled/grafy/Grafy"
+        self.files = []
+        self.words = []
+        self.fhmap = {}
+        self.hmap = {}
+        self.lines = ()
+        self.func_names = []
+        self.func_dict = {}
+        self.all_func_dict = {}
 
 
-def getFiles():
-    # r=root, d=directories, f = files
-    for r, d, f in os.walk(path):
-        for file in f:
-            if '.py' in file:
-                if '.pyc' not in file:
-                    files.append(file)
+    def getFiles(self) :
+        # r=root, d=directories, f = files
+        for r, d, f in os.walk(self.path):
+            for file in f:
+                if '.py' in file:
+                    if '.pyc' not in file:
+                        self.files.append(file)
 
-def getWords():
-    global lines
-    global lineCounter
-    for line in lines:
-        if '\n' in line:
-            lineCounter = lineCounter + 1
-            hmap['lines'] = lineCounter
-        if imp in line:
-            list_of_words = line.split()
-            word = list_of_words[1]
-            if word is not "=":
-                words.append(word)
-        if df in line:
-            list_of_func_names = line.split();
-            word = list_of_func_names[1]
-            if word is not "=":
-                func_names.append(word)
-    lineCounter = 0
+    def getWords(self) :
+        lineCounter = 0
+        for line in self.lines:
+            if '\n' in line:
+                lineCounter = lineCounter + 1
+                self.hmap['lines'] = lineCounter
+            if self.imp in line:
+                list_of_words = line.split()
+                word = list_of_words[1]
+                if word is not "=":
+                    self.words.append(word)
+            if self.df in line:
+                list_of_func_names = line.split();
+                word = list_of_func_names[1]
+                if word is not "=":
+                    self.func_names.append(word)
+        lineCounter = 0
 
-def saveToDictionary(fil):
-    global counter
-    global hmap
-    global func_dict
-    global func_counter
-    for w in words:
-        for line in lines:
-            if str(w) in line:
-                counter = counter + 1
-                hmap[w] = counter
-        counter = 0
-    for name in func_names:
-        for line in lines:
-            if str(name) in line:
-                func_counter = func_counter + 1
-                func_dict[name] = func_counter
+    def saveToDictionary(self,fil) :
         func_counter = 0
-    fhmap[str(fil)] = hmap
-    all_func_dict[str(fil)] = func_dict;
-    hmap = {}
-    func_dict = {}
+        counter = 0
+        for w in self.words:
+            for line in self.lines:
+                if str(w) in line:
+                    counter = counter + 1
+                    self.hmap[w] = counter
+            counter = 0
+        for name in self.func_names:
+            for line in self.lines:
+                if str(name) in line:
+                    func_counter = func_counter + 1
+                    self.func_dict[name] = func_counter
+            func_counter = 0
+        self.fhmap[str(fil)] = self.hmap
+        self.all_func_dict[str(fil)] = self.func_dict;
+        self.hmap = {}
+        self.func_dict = {}
 
 
-def saveToFile():
-    with open('data.json', 'w') as js_file:
-        data = json.dump(fhmap, js_file)
-    with open('func.json', 'w') as js_file:
-        data = json.dump(all_func_dict, js_file)
+    def saveToFile(self) :
+        with open('data.json', 'w') as js_file:
+            data = json.dump(self.fhmap, js_file,indent=2)
+        with open('func.json', 'w') as js_file:
+            data = json.dump(self.all_func_dict, js_file, indent=2)
+
+    def drawGraph(self) :
+        graph2 = Graph2()
+        graph2.drawGraph()
+
+
+def main() :
+    # global lines
+    # global words
+    converter = Conv()
+    converter.getFiles()
+    for fil in converter.files:
+        if 'pyparsing.py' not in str(fil):
+            converter.lines = tuple(open(str(fil), 'r', encoding='latin-1'))
+            converter.getWords()
+            converter.saveToDictionary(fil)
+            converter.words = []
+    converter.saveToFile()
+    converter.drawGraph()
+
 
 main()
