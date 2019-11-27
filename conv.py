@@ -70,25 +70,3 @@ class Conv:
             data = json.dump(self.fhmap, js_file,indent=2)
         with open('func.json', 'w') as js_file:
             data = json.dump(self.all_func_dict, js_file, indent=2)
-
-    def drawGraph(self) :
-        graph2 = Graph2()
-        graph2.drawGraph()
-
-
-def main() :
-    # global lines
-    # global words
-    converter = Conv()
-    converter.getFiles()
-    for fil in converter.files:
-        if 'pyparsing.py' not in str(fil):
-            converter.lines = tuple(open(str(fil), 'r', encoding='latin-1'))
-            converter.getWords()
-            converter.saveToDictionary(fil)
-            converter.words = []
-    converter.saveToFile()
-    converter.drawGraph()
-
-
-main()
