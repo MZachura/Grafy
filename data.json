@@ -1,12 +1,18 @@
 {
   "control.py": {
-    "lines": 34,
-    "graph2": 1
+    "lines": 56,
+    "graph2": 1,
+    "pydot": 9
+  },
+  "test.py": {
+    "lines": 17,
+    "json": 3,
+    "pydot": 7
   },
   "graph2.py": {
-    "lines": 230,
-    "json": 15,
-    "pydot": 107
+    "lines": 196,
+    "json": 12,
+    "pydot": 90
   },
   "conv.py": {
     "lines": 72,

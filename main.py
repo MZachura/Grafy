@@ -17,7 +17,7 @@ def main() :
             converter.saveToDictionary(fil)
             converter.words = []
     converter.saveToFile()
-    graph.drawgraphall()
+    #graph.drawAllGraph()
     control.askForGraphType()
     control.drawCombinationOfGraph()
 

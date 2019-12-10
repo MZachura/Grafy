@@ -4,12 +4,13 @@
     "askForGraphType(self)": 1,
     "drawCombinationOfGraph(self)": 1
   },
+  "test.py": {},
   "graph2.py": {
     "__init__(self)": 1,
     "drawGraph(self)": 1,
     "drawGrafFunkcji(self):": 1,
     "drawGrafModulu(self):": 1,
-    "drawgraphall(self):": 1
+    "drawGrafFunkcjaPlik(self):": 1
   },
   "conv.py": {
     "__init__(self)": 1,
