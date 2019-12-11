@@ -1,4 +1,10 @@
 {
+  "TestConv.py": {
+    "__init__(self)": 1,
+    "test_get_files_size(self):": 1,
+    "test_get_words_size(self):": 1,
+    "test_save_to_dict_size(self):": 1
+  },
   "control.py": {
     "__init__(self)": 1,
     "askForGraphType(self)": 1,

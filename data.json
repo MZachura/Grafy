@@ -1,8 +1,14 @@
 {
+  "TestConv.py": {
+    "lines": 24,
+    "unittest": 3,
+    "pydot": 1,
+    "conv": 8
+  },
   "control.py": {
-    "lines": 56,
+    "lines": 87,
     "graph2": 1,
-    "pydot": 9
+    "pydot": 13
   },
   "test.py": {
     "lines": 17,
@@ -10,15 +16,14 @@
     "pydot": 7
   },
   "graph2.py": {
-    "lines": 196,
-    "json": 12,
-    "pydot": 90
+    "lines": 202,
+    "json": 16,
+    "pydot": 86
   },
   "conv.py": {
-    "lines": 72,
+    "lines": 95,
     "os": 2,
-    "json": 5,
-    "graph2": 1
+    "json": 7
   },
   "main.py": {
     "lines": 28,
