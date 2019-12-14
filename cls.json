@@ -6,6 +6,12 @@
     "Control:": 1
   },
   "test.py": {},
+  "func.json": {},
+  "cls.json": {
+    "TestConv(unittest.TestCase):": 2,
+    "Control:": 2
+  },
+  "data.json": {},
   "graph2.py": {
     "Graph2:": 1
   },

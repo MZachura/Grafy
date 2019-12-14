@@ -20,75 +20,41 @@ class Graph2:
         with open('cls.json', 'r') as f:
             self.clsdata1 = json.load(f)
             self.cls_counter = sum(1 for line in open('cls.json'))
-#        print(self.data_counter)
-#        print(self.func_counter)
-#        print(self.cls_counter)
 
     def drawGraph(self) :
         datastore = self.datastore1;
         fundata = self.fundata1;
-
-        cluster_1=pydot.Cluster('graf',label='graph2.py', style="filled",color="white")
-        cluster_1.add_node(pydot.Node('gr', label=datastore['graph2.py']['lines'],shape="circle", style="filled", fillcolor="white"))
-
-        cluster_2=pydot.Cluster('conv',label='conv.py', style="filled",color="white")
-        cluster_2.add_node(pydot.Node('co', label=datastore['conv.py']['lines'], shape="circle", style="filled", fillcolor="white"))
-
-        cluster_3=pydot.Cluster('pyd',label='pydot', style="filled",color="white")
-        cluster_3.add_node(pydot.Node('pydo', label='1078',shape="circle", style="filled", fillcolor="white"))
-
-        cluster_4=pydot.Cluster('o',label='os', style="filled",color="white")
-        cluster_4.add_node(pydot.Node('os', label='1947', shape="circle", style="filled", fillcolor="white"))
-
-        cluster_5=pydot.Cluster('js',label='json', style="filled",color="white")
-        cluster_5.add_node(pydot.Node('jso', label='1477', shape="circle", style="filled", fillcolor="white"))
-
-        cluster_6=pydot.Cluster('djs',label='data.json', style="filled",color="white")
-        cluster_6.add_node(pydot.Node('djso', label=self.data_counter, shape="circle", style="filled", fillcolor="white"))
-
-        cluster_7=pydot.Cluster('fjs',label='func.json', style="filled",color="white")
-        cluster_7.add_node(pydot.Node('fjs', label=self.func_counter, shape="circle", style="filled", fillcolor="white"))
-
-        cluster_8=pydot.Cluster('cn',label='control.py', style="filled",color="white")
-        cluster_8.add_node(pydot.Node('cn', label=datastore['control.py']['lines'], shape="circle", style="filled", fillcolor="white"))
-
-        cluster_9=pydot.Cluster('ma',label='main.py', style="filled",color="white")
-        cluster_9.add_node(pydot.Node('ma', label=datastore['main.py']['lines'], shape="circle", style="filled", fillcolor="white"))
-
-        cluster_10=pydot.Cluster('cls',label='cls.json', style="filled",color="white")
-        cluster_10.add_node(pydot.Node('cls', label=self.cls_counter, shape="circle", style="filled", fillcolor="white"))
-
+        str1="pl"
+        for name in datastore:
+            a=name+str1
+            if(name!="data.json" and name!="func.json" and name!="cls.json" ):
+                for p in datastore[name]:
+                    if(p=='lines'):
+                        lines=datastore[name][p]
+                        n=pydot.Cluster(a,label=name,style="filled",color="white")
+                        n.add_node(pydot.Node(a,label=lines,shape="circle",style="filled",fillcolor="white"))
+                        self.graph1.add_subgraph(n)
+                    else:
+                        if (p !="os" and p!="pydot" and p!="json" and p!="data.json" and p!="func.json" and p!="cls.json" and p!="unittest"):
+                            d=p+".py"
+                            b=d+str1
+                            n=pydot.Cluster(a,label=name,style="filled",color="white")
+                            n.add_node(pydot.Node(a,label=lines,shape="circle",style="filled",fillcolor="white"))
+                            self.graph1.add_subgraph(n)
+                            m=pydot.Cluster(b,label=d,style="filled",color="white")
+                            m.add_node(pydot.Node(b,label=lines,shape="circle",style="filled",fillcolor="white"))
+                            self.graph1.add_subgraph(m)
+                            self.graph1.add_edge(pydot.Edge(a, b,label=datastore[name][p], fontsize="10.0"))
+                        else:
+                            n=pydot.Cluster(a,label=name,style="filled",color="white")
+                            n.add_node(pydot.Node(a,label=lines,shape="circle",style="filled",fillcolor="white"))
+                            self.graph1.add_subgraph(n)
+                            m=pydot.Cluster(p,label=p,style="filled",color="white")
+                            m.add_node(pydot.Node(p,label=lines,shape="circle",style="filled",fillcolor="white"))
+                            self.graph1.add_subgraph(m)
+                            self.graph1.add_edge(pydot.Edge(a, p,label=datastore[name][p], fontsize="10.0"))
 
 
-        self.graph1.add_subgraph(cluster_1)
-        self.graph1.add_subgraph(cluster_2)
-        self.graph1.add_subgraph(cluster_3)
-        self.graph1.add_subgraph(cluster_4)
-        self.graph1.add_subgraph(cluster_5)
-        self.graph1.add_subgraph(cluster_6)
-        self.graph1.add_subgraph(cluster_7)
-        self.graph1.add_subgraph(cluster_8)
-        self.graph1.add_subgraph(cluster_9)
-        self.graph1.add_subgraph(cluster_10)
-
-        self.graph1.add_edge(pydot.Edge("co", "jso",label=datastore['conv.py']['json'], fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("co", "os",label=datastore['conv.py']['os'], fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("gr", "pydo",label=datastore['graph2.py']['pydot'],  fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("gr", "jso",label=datastore['graph2.py']['json'], fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("co", "djso",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("gr", "djso",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("co", "gr",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("co", "fjs",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("gr", "fjs",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("gr", "cls",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("co", "cls",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("cn","pydo",label=datastore['control.py']['pydot'],fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("cn","gr",label=datastore['control.py']['graph2'],fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("ma","gr",label=datastore['main.py']['graph2'],fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("ma","co",label=datastore['main.py']['conv'],fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("ma","cn",label=datastore['main.py']['control'],fontsize="10.0"))
-
-        #self.graph1.write_png('graf.png')
 
     def drawGrafFunkcji(self):
         datastore = self.datastore1;
@@ -162,7 +128,7 @@ class Graph2:
         self.graph1.add_edge(pydot.Edge("afgt", "dg",label='1', fontsize="10.0"))
         self.graph1.add_edge(pydot.Edge("afgt", "dgm",label='1', fontsize="10.0"))
         self.graph1.add_edge(pydot.Edge("afgt", "dgf",label='1', fontsize="10.0"))
-        #self.graph1.write_png('graffunkcji.png')
+
 
 
     def drawGrafModulu(self):
@@ -172,10 +138,13 @@ class Graph2:
         str="z"
         str2="x"
         for namec in clsdata:
-            z=pydot.Cluster(label=namec,style="filled",color="white")
-            a=namec+str
-            z.add_node(pydot.Node(a,label=namec,shape="circle",style="filled",fillcolor="white"))
-            self.graph1.add_subgraph(z)
+            if(namec!="data.json" and namec!="func.json" and namec!="cls.json"):
+                z=pydot.Cluster(label=namec,style="filled",color="white")
+                a=namec+str
+                z.add_node(pydot.Node(a,label=namec,shape="circle",style="filled",fillcolor="white"))
+                self.graph1.add_subgraph(z)
+            else:
+                wd40=0
             for pc in clsdata[namec]:
                 x=pydot.Cluster(label=pc,style="filled",color="white")
                 b=pc+str2
@@ -185,18 +154,23 @@ class Graph2:
 
     def drawGrafFunkcjaPlik(self):
         fundata = self.fundata1
-        n=0
-        m=0
+        n1=0
+        m1=0
 
-        for name in fundata:
+        for name1 in fundata:
+            if(name1!="data.json" and name1!="func.json" and name1!="cls.json"):
+                n1=pydot.Cluster(label=name1,style="filled",color="white")
+                n1.add_node(pydot.Node(name1,label=name1,shape="circle",style="filled",fillcolor="white"))
+                self.graph1.add_subgraph(n1)
 
-            n=pydot.Cluster(label=name,style="filled",color="white")
-            n.add_node(pydot.Node(name,label=name,shape="circle",style="filled",fillcolor="white"))
-            self.graph1.add_subgraph(n)
+                for p1 in fundata[name1]:
 
-            for p in fundata[name]:
+                    m1=pydot.Cluster(label=p1,style="filled",color="white")
+                    m1.add_node(pydot.Node(p1,label=p1,shape="circle",style="filled",fillcolor="white"))
+                    self.graph1.add_subgraph(m1)
+                    self.graph1.add_edge(pydot.Edge(name1, p1, fontsize="10.0"))
+            else:
+                wd40=0
 
-                m=pydot.Cluster(label=p,style="filled",color="white")
-                m.add_node(pydot.Node(p,label=p,shape="circle",style="filled",fillcolor="white"))
-                self.graph1.add_subgraph(m)
-                self.graph1.add_edge(pydot.Edge(name, p, fontsize="10.0"))
+#ważne info dodawać nazwy do a i b z innym str niż wcześniej! wykombinować co zrobić żeby nie było wd40 XD
+#ostatni graf żeby był automatyczny

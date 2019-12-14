@@ -11,6 +11,16 @@
     "drawCombinationOfGraph(self)": 1
   },
   "test.py": {},
+  "func.json": {
+    "__init__(self)": 1,
+    "test_get_files_size(self):": 1,
+    "test_get_words_size(self):": 1,
+    "test_save_to_dict_size(self):": 1,
+    "askForGraphType(self)": 1,
+    "drawCombinationOfGraph(self)": 1
+  },
+  "cls.json": {},
+  "data.json": {},
   "graph2.py": {
     "__init__(self)": 1,
     "drawGraph(self)": 1,
@@ -26,6 +36,6 @@
     "saveToFile(self)": 1
   },
   "main.py": {
-    "main()": 2
+    "main()": 1
   }
 }

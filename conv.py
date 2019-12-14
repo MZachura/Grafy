@@ -7,6 +7,7 @@ class Conv:
         self.df = "def"
         self.cls = "class"
         self.imp = "import"
+        self.exp = "open('"
         self.path = "/Users/marcinzachura/PycharmProjects/untitled/grafy/Grafy"
         self.files = []
         self.words = []
@@ -28,6 +29,8 @@ class Conv:
                 if '.py' in file:
                     if '.pyc' not in file:
                         self.files.append(file)
+                if '.json' in file:
+                    self.files.append(file)
 
     def getWords(self) :
         n=1
@@ -36,21 +39,30 @@ class Conv:
             if '\n' in line:
                 self.lineCounter = self.lineCounter + 1
                 self.hmap['lines'] = self.lineCounter
+
             if self.imp in line:
                 list_of_words = line.split()
                 word = list_of_words[1]
                 if word is not "=":
                     self.words.append(word)
 
+            if self.exp in line:
+                list_of_words = line.split()
+                word = list_of_words[1]
+                word= word[6:-2]
+                if word is not "=":
+                    if word is not "":
+                        self.words.append(word)
+
             if self.df in line:
-                list_of_func_names = line.split();
+                list_of_func_names = line.split()
                 word = list_of_func_names[1]
                 if word is not "=":
                     self.func_names.append(word)
 
 
             if self.cls in line:
-                list_of_cls_names = line.split();
+                list_of_cls_names = line.split()
                 word = list_of_cls_names[1]
                 if word is not "=":
                     self.cls_names.append(word)
@@ -67,11 +79,12 @@ class Conv:
                     self.hmap[w] = counter
             counter = 0
         for name in self.func_names:
-            for line in self.lines:
-                if str(name) in line:
-                    func_counter = func_counter + 1
-                    self.func_dict[name] = func_counter
-            func_counter = 0
+            if (name!='1'and name!='2'):
+                for line in self.lines:
+                    if str(name) in line:
+                        func_counter = func_counter + 1
+                        self.func_dict[name] = func_counter
+                        func_counter = 0
         for name in self.cls_names:
             for line in self.lines:
                 if str(name) in line:

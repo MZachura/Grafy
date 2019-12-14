@@ -11,19 +11,35 @@
     "pydot": 13
   },
   "test.py": {
-    "lines": 17,
+    "lines": 10,
     "json": 3,
-    "pydot": 7
+    "pydot": 2,
+    "func.json": 1
+  },
+  "func.json": {
+    "lines": 40
+  },
+  "cls.json": {
+    "lines": 21
+  },
+  "data.json": {
+    "lines": 49
   },
   "graph2.py": {
-    "lines": 202,
-    "json": 16,
-    "pydot": 86
+    "lines": 176,
+    "json": 14,
+    "pydot": 63,
+    "data.json": 6,
+    "func.json": 6,
+    "cls.json": 6
   },
   "conv.py": {
-    "lines": 95,
+    "lines": 108,
     "os": 2,
-    "json": 7
+    "json": 8,
+    "data.json": 1,
+    "func.json": 1,
+    "cls.json": 1
   },
   "main.py": {
     "lines": 28,
