@@ -1,6 +1,7 @@
 import json
 import pydot
 
+
 class Graph2:
 
     def __init__(self) :
@@ -27,36 +28,45 @@ class Graph2:
         str1="pl"
         for name in datastore:
             a=name+str1
-            if(name!="data.json" and name!="func.json" and name!="cls.json" ):
+            if(name!="data.json" and name!="func.json" and name!="cls.json" and name!="relfunc.json"):
                 for p in datastore[name]:
                     if(p=='lines'):
-                        lines=datastore[name][p]
+                        line=datastore[name][p]
                         n=pydot.Cluster(a,label=name,style="filled",color="white")
-                        n.add_node(pydot.Node(a,label=lines,shape="circle",style="filled",fillcolor="white"))
+                        n.add_node(pydot.Node(a,label=line,shape="circle",style="filled",fillcolor="white"))
                         self.graph1.add_subgraph(n)
                     else:
-                        if (p !="os" and p!="pydot" and p!="json" and p!="data.json" and p!="func.json" and p!="cls.json" and p!="unittest"):
+                        if (p !="os" and p!="pydot" and p!="json" and p!="data.json" and p!="func.json" and p!="cls.json" and p!="unittest" and p!="relfunc.json"):
                             d=p+".py"
                             b=d+str1
+
                             n=pydot.Cluster(a,label=name,style="filled",color="white")
-                            n.add_node(pydot.Node(a,label=lines,shape="circle",style="filled",fillcolor="white"))
+                            n.add_node(pydot.Node(a,label=line,shape="circle",style="filled",fillcolor="white"))
                             self.graph1.add_subgraph(n)
                             m=pydot.Cluster(b,label=d,style="filled",color="white")
-                            m.add_node(pydot.Node(b,label=lines,shape="circle",style="filled",fillcolor="white"))
+                            m.add_node(pydot.Node(b,label=datastore[d]['lines'],shape="circle",style="filled",fillcolor="white"))
                             self.graph1.add_subgraph(m)
                             self.graph1.add_edge(pydot.Edge(a, b,label=datastore[name][p], fontsize="10.0"))
                         else:
                             n=pydot.Cluster(a,label=name,style="filled",color="white")
-                            n.add_node(pydot.Node(a,label=lines,shape="circle",style="filled",fillcolor="white"))
-                            self.graph1.add_subgraph(n)
-                            m=pydot.Cluster(p,label=p,style="filled",color="white")
-                            m.add_node(pydot.Node(p,label=lines,shape="circle",style="filled",fillcolor="white"))
+                            if(p!="unittest" and p!="os" and p!="json" and p!="pydot"):
+
+                                n.add_node(pydot.Node(a,label=line,shape="circle",style="filled",fillcolor="white"))
+                                self.graph1.add_subgraph(n)
+                                m=pydot.Cluster(p,label=p,style="filled",color="white")
+                                m.add_node(pydot.Node(p,label=datastore[p]['lines'],shape="circle",style="filled",fillcolor="white"))
+                            else:
+                                n.add_node(pydot.Node(a,label=datastore[name][p],shape="circle",style="filled",fillcolor="white"))
+                                self.graph1.add_subgraph(n)
+                                m=pydot.Cluster(p,label=p,style="filled",color="white")
+                                m.add_node(pydot.Node(p,label=line,shape="circle",style="filled",fillcolor="white"))
+
                             self.graph1.add_subgraph(m)
                             self.graph1.add_edge(pydot.Edge(a, p,label=datastore[name][p], fontsize="10.0"))
 
 
 
-    def drawGrafFunkcji(self):
+    def drawGrafFunkcji(self) :
         datastore = self.datastore1;
         fundata = self.fundata1;
 
@@ -131,14 +141,14 @@ class Graph2:
 
 
 
-    def drawGrafModulu(self):
+    def drawGrafModulu(self) :
         clsdata = self.clsdata1
         z=0
         x=0
         str="z"
         str2="x"
         for namec in clsdata:
-            if(namec!="data.json" and namec!="func.json" and namec!="cls.json"):
+            if(namec!="data.json" and namec!="func.json" and namec!="cls.json" and namec!="relfunc.json"):
                 z=pydot.Cluster(label=namec,style="filled",color="white")
                 a=namec+str
                 z.add_node(pydot.Node(a,label=namec,shape="circle",style="filled",fillcolor="white"))
@@ -152,13 +162,13 @@ class Graph2:
                 self.graph1.add_subgraph(x)
                 self.graph1.add_edge(pydot.Edge(a, b, fontsize="10.0"))
 
-    def drawGrafFunkcjaPlik(self):
+    def drawGrafFunkcjaPlik(self) :
         fundata = self.fundata1
         n1=0
         m1=0
 
         for name1 in fundata:
-            if(name1!="data.json" and name1!="func.json" and name1!="cls.json"):
+            if(name1!="data.json" and name1!="func.json" and name1!="cls.json" and name1!="relfunc.json" ):
                 n1=pydot.Cluster(label=name1,style="filled",color="white")
                 n1.add_node(pydot.Node(name1,label=name1,shape="circle",style="filled",fillcolor="white"))
                 self.graph1.add_subgraph(n1)
@@ -171,6 +181,11 @@ class Graph2:
                     self.graph1.add_edge(pydot.Edge(name1, p1, fontsize="10.0"))
             else:
                 wd40=0
+
+
+
+
+
 
 #ważne info dodawać nazwy do a i b z innym str niż wcześniej! wykombinować co zrobić żeby nie było wd40 XD
 #ostatni graf żeby był automatyczny

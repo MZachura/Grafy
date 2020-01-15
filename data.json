@@ -1,50 +1,52 @@
 {
   "TestConv.py": {
-    "lines": 24,
+    "lines": 31,
     "unittest": 3,
     "pydot": 1,
     "conv": 8
   },
   "control.py": {
-    "lines": 87,
+    "lines": 129,
     "graph2": 1,
-    "pydot": 13
+    "pydot": 13,
+    "os": 15
   },
   "test.py": {
-    "lines": 10,
-    "json": 3,
-    "pydot": 2,
-    "func.json": 1
+    "lines": 73
   },
   "func.json": {
-    "lines": 40
+    "lines": 36
   },
   "cls.json": {
-    "lines": 21
+    "lines": 19
   },
   "data.json": {
-    "lines": 49
+    "lines": 51
   },
   "graph2.py": {
-    "lines": 176,
-    "json": 14,
-    "pydot": 63,
+    "lines": 191,
+    "json": 15,
+    "pydot": 67,
     "data.json": 6,
     "func.json": 6,
     "cls.json": 6
   },
+  "relfunc.json": {
+    "lines": 11
+  },
   "conv.py": {
-    "lines": 108,
+    "lines": 168,
     "os": 2,
-    "json": 8,
+    "json": 16,
     "data.json": 1,
-    "func.json": 1,
-    "cls.json": 1
+    "func.json": 5,
+    "cls.json": 2,
+    "relfunc.json": 2
   },
   "main.py": {
-    "lines": 28,
+    "lines": 24,
     "graph2": 1,
-    "conv": 9,
+    "conv": 10,
     "control": 4
   }
 }

@@ -1,20 +1,18 @@
 {
+  "cls.json": {},
   "TestConv.py": {
-    "TestConv(unittest.TestCase):": 1
+    "TestConv(unittest.TestCase)": 1
   },
   "control.py": {
     "Control:": 1
   },
   "test.py": {},
   "func.json": {},
-  "cls.json": {
-    "TestConv(unittest.TestCase):": 2,
-    "Control:": 2
-  },
   "data.json": {},
   "graph2.py": {
     "Graph2:": 1
   },
+  "relfunc.json": {},
   "conv.py": {
     "Conv:": 1
   },

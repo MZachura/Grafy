@@ -1,9 +1,11 @@
 {
+  "func.json": {},
   "TestConv.py": {
     "__init__(self)": 1,
-    "test_get_files_size(self):": 1,
-    "test_get_words_size(self):": 1,
-    "test_save_to_dict_size(self):": 1
+    "test_get_files_size(self)": 1,
+    "test_get_words_size(self)": 1,
+    "test_save_to_dict_size(self)": 1,
+    "test_if_graph_exist(self)": 1
   },
   "control.py": {
     "__init__(self)": 1,
@@ -11,31 +13,25 @@
     "drawCombinationOfGraph(self)": 1
   },
   "test.py": {},
-  "func.json": {
-    "__init__(self)": 1,
-    "test_get_files_size(self):": 1,
-    "test_get_words_size(self):": 1,
-    "test_save_to_dict_size(self):": 1,
-    "askForGraphType(self)": 1,
-    "drawCombinationOfGraph(self)": 1
-  },
   "cls.json": {},
   "data.json": {},
   "graph2.py": {
     "__init__(self)": 1,
     "drawGraph(self)": 1,
-    "drawGrafFunkcji(self):": 1,
-    "drawGrafModulu(self):": 1,
-    "drawGrafFunkcjaPlik(self):": 1
+    "drawGrafFunkcji(self)": 1,
+    "drawGrafModulu(self)": 1,
+    "drawGrafFunkcjaPlik(self)": 1
   },
+  "relfunc.json": {},
   "conv.py": {
     "__init__(self)": 1,
     "getFiles(self)": 1,
     "getWords(self)": 1,
-    "saveToDictionary(self,fil)": 1,
+    "saveToDictionary(self,fil)": 2,
+    "relFunc(self)": 1,
     "saveToFile(self)": 1
   },
   "main.py": {
-    "main()": 1
+    "main()": 2
   }
 }

@@ -3,8 +3,7 @@ from conv import Conv
 from control import Control
 
 def main() :
-    # global lines
-    # global words
+
     converter = Conv()
     graph = Graph2()
     control = Control()
@@ -17,12 +16,9 @@ def main() :
             converter.saveToDictionary(fil)
             converter.words = []
     converter.saveToFile()
-    #graph.drawAllGraph()
+    converter.relFunc()
     control.askForGraphType()
     control.drawCombinationOfGraph()
 
-    # graph.drawGraph()
-    # graph.drawGrafFunkcji()
-    # graph.drawGrafModulu()
 
 main()
