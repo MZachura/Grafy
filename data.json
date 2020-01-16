@@ -15,13 +15,13 @@
     "lines": 73
   },
   "func.json": {
-    "lines": 36
+    "lines": 58
   },
   "cls.json": {
-    "lines": 19
+    "lines": 25
   },
   "data.json": {
-    "lines": 51
+    "lines": 62
   },
   "graph2.py": {
     "lines": 191,
@@ -31,22 +31,33 @@
     "func.json": 6,
     "cls.json": 6
   },
+  "wordGetter.py": {
+    "lines": 51,
+    "os": 1,
+    "json": 3,
+    "data.json": 1
+  },
+  "fileGetter.py": {
+    "lines": 18,
+    "os": 2
+  },
   "relfunc.json": {
-    "lines": 11
+    "lines": 13
   },
   "conv.py": {
-    "lines": 161,
+    "lines": 159,
     "os": 2,
     "json": 16,
-    "data.json": 1,
     "func.json": 5,
     "cls.json": 2,
     "relfunc.json": 2
   },
   "main.py": {
-    "lines": 24,
+    "lines": 30,
     "graph2": 1,
-    "conv": 10,
-    "control": 4
+    "conv": 6,
+    "control": 4,
+    "fileGetter": 4,
+    "wordGetter": 6
   }
 }

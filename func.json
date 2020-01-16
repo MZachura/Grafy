@@ -14,23 +14,42 @@
   },
   "test.py": {},
   "cls.json": {},
-  "data.json": {},
+  "data.json": {
+    "4,": 2,
+    "3,": 3,
+    "5,": 3,
+    "2,": 2,
+    "7,": 1,
+    "1,": 5
+  },
   "graph2.py": {
     "def": 5,
     "__init__(self)": 1,
+    "1,": 5,
     "drawGraph(self)": 1,
     "drawGrafFunkcji(self)": 1,
     "drawGrafModulu(self)": 1,
     "drawGrafFunkcjaPlik(self)": 1
   },
+  "wordGetter.py": {
+    "def": 4,
+    "__init__(self)": 1,
+    "getWords(self,": 1,
+    "saveWordsToDict(self,": 1,
+    "saveDictToJson(self)": 1
+  },
+  "fileGetter.py": {
+    "def": 2,
+    "__init__(self)": 1,
+    "getFiles(self)": 1
+  },
   "relfunc.json": {},
   "conv.py": {
     "def": 7,
     "__init__(self)": 1,
+    "getWords(self,": 1,
     "getFiles(self)": 1,
-    "getWords(self)": 1,
-    "saveToDictionary(self,fil)": 2,
-    "relFunc(self)": 1,
+    "saveToDictionary(self,fil,": 1,
     "saveToFile(self)": 1
   },
   "main.py": {

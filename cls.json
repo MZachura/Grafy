@@ -12,6 +12,12 @@
   "graph2.py": {
     "Graph2:": 1
   },
+  "wordGetter.py": {
+    "WordGetter:": 1
+  },
+  "fileGetter.py": {
+    "FileGetter:": 1
+  },
   "relfunc.json": {},
   "conv.py": {
     "Conv:": 1
