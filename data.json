@@ -1,9 +1,9 @@
 {
   "TestConv.py": {
-    "lines": 31,
+    "lines": 35,
     "unittest": 3,
     "pydot": 1,
-    "conv": 8
+    "conv": 17
   },
   "control.py": {
     "lines": 129,
@@ -35,7 +35,7 @@
     "lines": 11
   },
   "conv.py": {
-    "lines": 168,
+    "lines": 161,
     "os": 2,
     "json": 16,
     "data.json": 1,
