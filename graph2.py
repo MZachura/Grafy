@@ -11,6 +11,7 @@ class Graph2:
         self.func_counter = 0
         self.data_counter = 0
         self.cls_counter = 0
+        self.relcounter = 0
         self.graph1 = pydot.Dot(graph_type='digraph')
         with open('data.json', 'r') as f:
             self.datastore1 = json.load(f)
@@ -21,6 +22,9 @@ class Graph2:
         with open('cls.json', 'r') as f:
             self.clsdata1 = json.load(f)
             self.cls_counter = sum(1 for line in open('cls.json'))
+        with open('relfunc.json', 'r') as f:
+            self.reldata1 = json.load(f)
+            self.relcounter = sum(1 for line in open('relfunc.json'))
 
     def drawGraph(self) :
         datastore = self.datastore1;
@@ -69,75 +73,106 @@ class Graph2:
     def drawGrafFunkcji(self) :
         datastore = self.datastore1;
         fundata = self.fundata1;
+        reldata = self.reldata1
+        n1=0
+        m1=0
+
+        for name1 in fundata:
+            if(name1!="data.json" and name1!="func.json" and name1!="cls.json" and name1!="relfunc.json" ):
+                n1=pydot.Cluster(label=name1,style="filled",color="white")
+                n1.add_node(pydot.Node(name1,label=name1,shape="circle",style="filled",fillcolor="white"))
+                self.graph1.add_subgraph(n1)
+
+                for p1 in fundata[name1]:
+                    m1=pydot.Cluster(label=p1,style="filled",color="white")
+                    m1.add_node(pydot.Node(p1,label=p1,shape="circle",style="filled",fillcolor="white"))
+                    self.graph1.add_subgraph(m1)
+                    self.graph1.add_edge(pydot.Edge(name1, p1, fontsize="10.0"))
+            else:
+                wd40=0
+        for name1 in reldata:
+            if(name1!="data.json" and name1!="func.json" and name1!="cls.json" and name1!="relfunc.json" ):
+                n1=pydot.Cluster(label=name1,style="filled",color="white")
+                n1.add_node(pydot.Node(name1,label=name1,shape="circle",style="filled",fillcolor="white"))
+                self.graph1.add_subgraph(n1)
+
+                for p1 in reldata[name1]:
+                    m1=pydot.Cluster(label=p1,style="filled",color="white")
+                    m1.add_node(pydot.Node(p1,label=p1,shape="circle",style="filled",fillcolor="white"))
+                    self.graph1.add_subgraph(m1)
+                    self.graph1.add_edge(pydot.Edge(name1, p1, fontsize="10.0"))
+            else:
+                wd40=0
+
+#
+#
+#         #self.graph1= pydot.Dot(graph_type='digraph')
+#         clusterf_1=pydot.Cluster('',label='', style="filled",color="white")
+#         clusterf_1.add_node(pydot.Node('main', label='main',shape="circle", style="filled", fillcolor="white"))
+#
+#         clusterf_2=pydot.Cluster('',label='', style="filled",color="white")
+#         clusterf_2.add_node(pydot.Node('getf', label='getFiles', shape="circle", style="filled", fillcolor="white"))
+#
+#         clusterf_3=pydot.Cluster('',label='', style="filled",color="white")
+#         clusterf_3.add_node(pydot.Node('getw', label='getWords',shape="circle", style="filled", fillcolor="white"))
+#
+#         clusterf_4=pydot.Cluster('',label='', style="filled",color="white")
+#         clusterf_4.add_node(pydot.Node('std', label='saveToDictionary', shape="circle", style="filled", fillcolor="white"))
+#
+#         clusterf_5=pydot.Cluster('',label='', style="filled",color="white")
+#         clusterf_5.add_node(pydot.Node('stf', label='saveToFile', shape="circle", style="filled", fillcolor="white"))
+#
+#         clusterf_6=pydot.Cluster('',label='', style="filled",color="white")
+#         clusterf_6.add_node(pydot.Node('dg', label='drawGraph', shape="circle", style="filled", fillcolor="white"))
+#
+#         clusterf_7=pydot.Cluster('',label='', style="filled",color="white")
+#         clusterf_7.add_node(pydot.Node('ini', label='__init__', shape="circle", style="filled", fillcolor="white"))
+#
+#         clusterf_8=pydot.Cluster('',label='', style="filled",color="white")
+#         clusterf_8.add_node(pydot.Node('dgf', label='drawGrafFunkcji', shape="circle", style="filled", fillcolor="white"))
+
+        # clusterf_9=pydot.Cluster('',label='', style="filled",color="white")
+        # clusterf_9.add_node(pydot.Node('dgm', label='drawGrafModulu', shape="circle", style="filled", fillcolor="white"))
+        #
+        # clusterf_10=pydot.Cluster('',label='', style="filled",color="white")
+        # clusterf_10.add_node(pydot.Node('dag', label='drawAllGraph', shape="circle", style="filled", fillcolor="white"))
+        #
+        # clusterf_11=pydot.Cluster('',label='', style="filled",color="white")
+        # clusterf_11.add_node(pydot.Node('afgt', label='askForGraphType', shape="circle", style="filled", fillcolor="white"))
+        #
+        # clusterf_12=pydot.Cluster('',label='', style="filled",color="white")
+        # clusterf_12.add_node(pydot.Node('dcog', label='drawCombinationOfGraph', shape="circle", style="filled", fillcolor="white"))
+        #
+        # #
+        # self.graph1.add_subgraph(clusterf_1)
+        # self.graph1.add_subgraph(clusterf_2)
+        # self.graph1.add_subgraph(clusterf_3)
+        # self.graph1.add_subgraph(clusterf_4)
+        # self.graph1.add_subgraph(clusterf_5)
+        # self.graph1.add_subgraph(clusterf_6)
+        # self.graph1.add_subgraph(clusterf_7)
+        # self.graph1.add_subgraph(clusterf_8)
+        # self.graph1.add_subgraph(clusterf_9)
+        # self.graph1.add_subgraph(clusterf_10)
+        # self.graph1.add_subgraph(clusterf_11)
+        # self.graph1.add_subgraph(clusterf_12)
 
 
-        #self.graph1= pydot.Dot(graph_type='digraph')
-        clusterf_1=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_1.add_node(pydot.Node('main', label='main',shape="circle", style="filled", fillcolor="white"))
 
-        clusterf_2=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_2.add_node(pydot.Node('getf', label='getFiles', shape="circle", style="filled", fillcolor="white"))
-
-        clusterf_3=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_3.add_node(pydot.Node('getw', label='getWords',shape="circle", style="filled", fillcolor="white"))
-
-        clusterf_4=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_4.add_node(pydot.Node('std', label='saveToDictionary', shape="circle", style="filled", fillcolor="white"))
-
-        clusterf_5=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_5.add_node(pydot.Node('stf', label='saveToFile', shape="circle", style="filled", fillcolor="white"))
-
-        clusterf_6=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_6.add_node(pydot.Node('dg', label='drawGraph', shape="circle", style="filled", fillcolor="white"))
-
-        clusterf_7=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_7.add_node(pydot.Node('ini', label='__init__', shape="circle", style="filled", fillcolor="white"))
-
-        clusterf_8=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_8.add_node(pydot.Node('dgf', label='drawGrafFunkcji', shape="circle", style="filled", fillcolor="white"))
-
-        clusterf_9=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_9.add_node(pydot.Node('dgm', label='drawGrafModulu', shape="circle", style="filled", fillcolor="white"))
-
-        clusterf_10=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_10.add_node(pydot.Node('dag', label='drawAllGraph', shape="circle", style="filled", fillcolor="white"))
-
-        clusterf_11=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_11.add_node(pydot.Node('afgt', label='askForGraphType', shape="circle", style="filled", fillcolor="white"))
-
-        clusterf_12=pydot.Cluster('',label='', style="filled",color="white")
-        clusterf_12.add_node(pydot.Node('dcog', label='drawCombinationOfGraph', shape="circle", style="filled", fillcolor="white"))
-
-
-        self.graph1.add_subgraph(clusterf_1)
-        self.graph1.add_subgraph(clusterf_2)
-        self.graph1.add_subgraph(clusterf_3)
-        self.graph1.add_subgraph(clusterf_4)
-        self.graph1.add_subgraph(clusterf_5)
-        self.graph1.add_subgraph(clusterf_6)
-        self.graph1.add_subgraph(clusterf_7)
-        self.graph1.add_subgraph(clusterf_8)
-        self.graph1.add_subgraph(clusterf_9)
-        self.graph1.add_subgraph(clusterf_10)
-        self.graph1.add_subgraph(clusterf_11)
-        self.graph1.add_subgraph(clusterf_12)
-
-
-
-
-        self.graph1.add_edge(pydot.Edge("main", "dag",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("main", "stf",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("main", "std",label='1',  fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("main", "getw",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("main", "getf",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("main", "afgt",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("main", "dcog",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("dag", "dg",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("dag", "dgm",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("dag", "dgf",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("afgt", "dg",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("afgt", "dgm",label='1', fontsize="10.0"))
-        self.graph1.add_edge(pydot.Edge("afgt", "dgf",label='1', fontsize="10.0"))
+        #
+        # self.graph1.add_edge(pydot.Edge("main", "dag",label='1', fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("main", "stf",label='1', fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("main", "std",label='1',  fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("main", "getw",label='1', fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("main", "getf",label='1', fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("main", "afgt",label='1', fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("main", "dcog",label='1', fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("dag", "dg",label='1', fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("dag", "dgm",label='1', fontsize="10.0"))
+        #self.graph1.add_edge(pydot.Edge("dag", "dgf",label='1', fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("afgt", "dg",label='1', fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("afgt", "dgm",label='1', fontsize="10.0"))
+        # self.graph1.add_edge(pydot.Edge("afgt", "dgf",label='1', fontsize="10.0"))
 
 
 
@@ -174,7 +209,7 @@ class Graph2:
                 self.graph1.add_subgraph(n1)
 
                 for p1 in fundata[name1]:
-
+                    
                     m1=pydot.Cluster(label=p1,style="filled",color="white")
                     m1.add_node(pydot.Node(p1,label=p1,shape="circle",style="filled",fillcolor="white"))
                     self.graph1.add_subgraph(m1)

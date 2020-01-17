@@ -22,6 +22,7 @@ class Control:
         print("10 = plikow, modulow, funkcji ")
         print("11 = wszystkie")
         print("12 = Zlozonosc Cyklometryczna ")
+        print("13 = Roznice miedzy commitami ")
         str_opt = input("Enter a number:")
         self.option = int(str_opt)
 
@@ -123,7 +124,18 @@ class Control:
             cmd = 'git log --pretty=%H -1'
             os.system(cmd)
         elif self.option == 12:
-            cmd = 'radon cc /Users/marcinzachura/PycharmProjects/untitled/grafy/Grafy -a -nc'
+            cmd = 'radon cc /Users/marcinzachura/PycharmProjects/untitled/grafy/Grafy -s'
             os.system(cmd)
+        elif self.option == 13:
+            cmd = 'git log --pretty=%H -1'
+            cmd1 = 'git log --pretty=%H -2'
+            #os.system(cmd)
+            #os.system(cmd1)
+            x = os.popen(cmd).read()
+            x2 = os.popen(cmd1).read()
+            cmd2 = 'git diff ' + x + ' ' + x2
+
+            os.system(cmd2)
+
         else:
             print("No valid option!")

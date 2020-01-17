@@ -1,14 +1,40 @@
 {
-  "func.json": {},
-  "relfunc.json": {},
-  "TestConv.py": {},
-  "control.py": {},
-  "test.py": {},
-  "cls.json": {},
-  "data.json": {},
-  "graph2.py": {},
-  "wordGetter.py": {},
-  "fileGetter.py": {},
-  "conv.py": {},
-  "main.py": {}
+  "drawCombinationOfGraph(self)": {
+    "drawGraph(self)":6,
+    "drawGrafModulu(self)":6,
+    "drawGrafFunkcji(self)":6,
+    "drawGrafFunkcjaPlik(self)":5
+  },
+  "main()": {
+    "getWords(self,":1,
+    "getFunc(self,":1,
+    "getFiles(self)":1,
+    "getCls(self,": 1,
+    "saveToDictionary(self,fil,":1,
+    "saveWordsToDict(self,":1,
+    "saveFuncsToDict(self,": 1,
+    "saveToFile(self)":1,
+    "saveDictToJson(self)":1,
+    "saveClsDictToJson(self)": 1,
+    "saveFuncDictToJson(self)": 1,
+    "saveClsToDict(self,fil,": 1,
+    "askForGraphType(self)":1,
+    "drawCombinationOfGraph(self)":1
+  },
+  "test_file_getter_get_files_size(self)": {
+    "getFiles(self)":1
+  },
+  "test_cls_getter_get_cls_size(self)": {
+    "getFiles(self)": 1,
+    "getCls(self,": 1
+  },
+  "test_func_getter_get_func_size(self)":{
+    "getFiles(self)": 1,
+    "getFunc(self,": 1
+  },
+  "test_word_getter_get_word_size(self)": {
+    "getFiles(self)": 1,
+    "getWords(self,": 1
+  }
+
 }

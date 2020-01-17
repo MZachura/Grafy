@@ -1,35 +1,42 @@
 {
+  "funcGetter.py": {
+    "lines": 41,
+    "os": 1,
+    "json": 7,
+    "func.json": 3
+  },
   "TestConv.py": {
-    "lines": 35,
+    "lines": 76,
     "unittest": 3,
     "pydot": 1,
-    "conv": 17
+    "clsGetter": 7,
+    "fileGetter": 13,
+    "funcGetter": 4,
+    "wordGetter": 4
   },
   "control.py": {
-    "lines": 129,
+    "lines": 141,
     "graph2": 1,
     "pydot": 13,
-    "os": 15
-  },
-  "test.py": {
-    "lines": 73
+    "os": 20
   },
   "func.json": {
-    "lines": 58
+    "lines": 57
   },
   "cls.json": {
-    "lines": 25
+    "lines": 27
   },
   "data.json": {
-    "lines": 62
+    "lines": 68
   },
   "graph2.py": {
-    "lines": 191,
-    "json": 15,
-    "pydot": 67,
-    "data.json": 6,
-    "func.json": 6,
-    "cls.json": 6
+    "lines": 226,
+    "json": 20,
+    "pydot": 77,
+    "data.json": 8,
+    "func.json": 10,
+    "cls.json": 8,
+    "relfunc.json": 8
   },
   "wordGetter.py": {
     "lines": 51,
@@ -42,22 +49,21 @@
     "os": 2
   },
   "relfunc.json": {
-    "lines": 13
+    "lines": 40
   },
-  "conv.py": {
-    "lines": 159,
+  "clsGetter.py": {
+    "lines": 157,
     "os": 2,
-    "json": 16,
-    "func.json": 5,
-    "cls.json": 2,
-    "relfunc.json": 2
+    "json": 18,
+    "cls.json": 2
   },
   "main.py": {
-    "lines": 30,
+    "lines": 35,
     "graph2": 1,
-    "conv": 6,
+    "clsGetter": 5,
     "control": 4,
     "fileGetter": 4,
-    "wordGetter": 6
+    "wordGetter": 6,
+    "funcGetter": 5
   }
 }

@@ -1,14 +1,17 @@
 {
+  "data.json": {},
+  "func.json": {},
+  "relfunc.json": {},
   "cls.json": {},
+  "funcGetter.py": {
+    "FuncGetter:": 1
+  },
   "TestConv.py": {
-    "TestConv(unittest.TestCase)": 1
+    "TestGetters(unittest.TestCase)": 1
   },
   "control.py": {
     "Control:": 1
   },
-  "test.py": {},
-  "func.json": {},
-  "data.json": {},
   "graph2.py": {
     "Graph2:": 1
   },
@@ -18,9 +21,8 @@
   "fileGetter.py": {
     "FileGetter:": 1
   },
-  "relfunc.json": {},
-  "conv.py": {
-    "Conv:": 1
+  "clsGetter.py": {
+    "ClsGetter:": 1
   },
   "main.py": {}
 }
