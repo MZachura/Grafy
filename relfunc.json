@@ -3,7 +3,10 @@
     "drawGraph(self)":6,
     "drawGrafModulu(self)":6,
     "drawGrafFunkcji(self)":6,
-    "drawGrafFunkcjaPlik(self)":5
+    "drawGrafFunkcjaPlik(self)":5,
+    "drawGraphPar(self)":2,
+    "drawGrafModuluPar(self)":2,
+    "drawGrafFunkcjiPar(self)":2
   },
   "main()": {
     "getWords(self,":1,

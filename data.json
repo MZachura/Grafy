@@ -15,13 +15,13 @@
     "wordGetter": 4
   },
   "control.py": {
-    "lines": 141,
+    "lines": 169,
     "graph2": 1,
-    "pydot": 13,
+    "pydot": 17,
     "os": 20
   },
   "func.json": {
-    "lines": 57
+    "lines": 61
   },
   "cls.json": {
     "lines": 27
@@ -30,13 +30,13 @@
     "lines": 68
   },
   "graph2.py": {
-    "lines": 226,
-    "json": 20,
-    "pydot": 77,
-    "data.json": 8,
-    "func.json": 10,
-    "cls.json": 8,
-    "relfunc.json": 8
+    "lines": 275,
+    "json": 27,
+    "pydot": 76,
+    "data.json": 14,
+    "func.json": 16,
+    "cls.json": 14,
+    "relfunc.json": 14
   },
   "wordGetter.py": {
     "lines": 51,
@@ -49,7 +49,7 @@
     "os": 2
   },
   "relfunc.json": {
-    "lines": 40
+    "lines": 43
   },
   "clsGetter.py": {
     "lines": 157,

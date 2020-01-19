@@ -19,10 +19,14 @@ class Control:
         print("7 = modulu, funkcji")
         print("8 = modulu, funkcja-plik")
         print("9 = funkcja-plik, funkcji ")
-        print("10 = plikow, modulow, funkcji ")
-        print("11 = wszystkie")
-        print("12 = Zlozonosc Cyklometryczna ")
-        print("13 = Roznice miedzy commitami ")
+        print("10 = wszystkie")
+        print("11 = plikow po partitioningu")
+        print("12 = modulu po partitioningu")
+        print("13 = funkcji po partitioningu")
+        print("14 = funkcja-plik po partitioningu")
+        print("15 = Wszystkie po partitioningu ")
+        print("16 = Zlozonosc Cyklometryczna ")
+        print("17 = Roznice miedzy commitami ")
         str_opt = input("Enter a number:")
         self.option = int(str_opt)
 
@@ -113,20 +117,44 @@ class Control:
             print("wersja: ")
             cmd = 'git log --pretty=%H -1'
             os.system(cmd)
+
         elif self.option == 11:
             self.graph.graph1 = pydot.Dot(graph_type='digraph')
-            self.graph.drawGraph()
-            self.graph.drawGrafModulu()
-            self.graph.drawGrafFunkcji()
-            self.graph.drawGrafFunkcjaPlik()
+            self.graph.drawGraphPar()
+            self.graph.graph1.write_png("graf.png")
+            print("wersja: ")
+            cmd = 'git log --pretty=%H -1'
+        elif self.option == 12:
+            self.graph.graph1 = pydot.Dot(graph_type='digraph')
+            self.graph.drawGrafModuluPar()
+            self.graph.graph1.write_png("graf.png")
+            print("wersja: ")
+            cmd = 'git log --pretty=%H -1'
+        elif self.option == 13:
+            self.graph.graph1 = pydot.Dot(graph_type='digraph')
+            self.graph.drawGrafFunkcjiPar()
+            self.graph.graph1.write_png("graf.png")
+            print("wersja: ")
+            cmd = 'git log --pretty=%H -1'
+        elif self.option == 14:
+            self.graph.graph1 = pydot.Dot(graph_type='digraph')
+            self.graph.drawGrafFunkcjaPlikPar()
+            self.graph.graph1.write_png("graf.png")
+            print("wersja: ")
+            cmd = 'git log --pretty=%H -1'
+        elif self.option == 15:
+            self.graph.graph1 = pydot.Dot(graph_type='digraph')
+            self.graph.drawGraphPar()
+            self.graph.drawGrafModuluPar()
+            self.graph.drawGrafFunkcjiPar()
             self.graph.graph1.write_png("graf.png")
             print("wersja: ")
             cmd = 'git log --pretty=%H -1'
             os.system(cmd)
-        elif self.option == 12:
+        elif self.option == 16:
             cmd = 'radon cc /Users/marcinzachura/PycharmProjects/untitled/grafy/Grafy -s'
             os.system(cmd)
-        elif self.option == 13:
+        elif self.option == 17:
             cmd = 'git log --pretty=%H -1'
             cmd1 = 'git log --pretty=%H -2'
             #os.system(cmd)
