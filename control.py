@@ -35,7 +35,6 @@ class Control:
             self.graph.graph1 = pydot.Dot(graph_type='digraph')
             self.graph.drawGraph()
             self.graph.graph1.write_png("graf.png")
-            self.graph.graph1.write_dot("graf.dot")
             cmd = 'git log --pretty=%H -1'
             print("wersja: ")
             os.system(cmd)
