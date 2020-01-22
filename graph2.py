@@ -123,7 +123,7 @@ class Graph2:
         for name1 in fundata:
             if(name1!="data.json" and name1!="func.json" and name1!="cls.json" and name1!="relfunc.json" ):
                 n2=pydot.Cluster(label=name1,style="filled",color="white")
-                n2.add_node(pydot.Node(name1,label=name1,shape="circle",style="filled",fillcolor="white"))
+                n2.add_node(pydot.Node(name1,label=name1+" ",shape="circle",style="filled",fillcolor="white"))
                 self.graph1.add_subgraph(n2)
 
                 for p1 in fundata[name1]:
@@ -135,15 +135,15 @@ class Graph2:
                 wd40=0
         for name1 in reldata:
             if(name1!="data.json" and name1!="func.json" and name1!="cls.json" and name1!="relfunc.json" ):
-                n2=pydot.Cluster(label=name1,style="filled",color="white")
-                n2.add_node(pydot.Node(name1,label=name1,shape="circle",style="filled",fillcolor="white"))
+                n2=pydot.Cluster(label=name1+" ",style="filled",color="white")
+                n2.add_node(pydot.Node(name1+" " ,label=name1+" ",shape="circle",style="filled",fillcolor="white"))
                 self.graph1.add_subgraph(n2)
 
                 for p1 in reldata[name1]:
-                    m2=pydot.Cluster(label=p1,style="filled",color="white")
-                    m2.add_node(pydot.Node(p1,label=p1,shape="circle",style="filled",fillcolor="white"))
+                    m2=pydot.Cluster(label=p1+" ",style="filled",color="white")
+                    m2.add_node(pydot.Node(p1+" ",label=p1+" ",shape="circle",style="filled",fillcolor="white"))
                     self.graph1.add_subgraph(m2)
-                    self.graph1.add_edge(pydot.Edge(name1, p1, fontsize="10.0"))
+                    self.graph1.add_edge(pydot.Edge(name1+" ", p1+" ", fontsize="10.0"))
             else:
                 wd40=0
 
@@ -156,28 +156,28 @@ class Graph2:
 
         for name1 in fundata:
             if(name1!="data.json" and name1!="func.json" and name1!="cls.json" and name1!="relfunc.json" ):
-                n2=pydot.Cluster(label=name1,style="filled",color="white")
-                n2.add_node(pydot.Node(name1,label=name1,shape="circle",style="filled",fillcolor="darkolivegreen1"))
+                n2=pydot.Cluster(label=name1+" ",style="filled",color="white")
+                n2.add_node(pydot.Node(name1+" ",label=name1+" ",shape="circle",style="filled",fillcolor="darkolivegreen1"))
                 self.graph1.add_subgraph(n2)
 
                 for p1 in fundata[name1]:
-                    m2=pydot.Cluster(label=p1,style="filled",color="white")
-                    m2.add_node(pydot.Node(p1,label=p1,shape="circle",style="filled",fillcolor="darkolivegreen3"))
+                    m2=pydot.Cluster(label=p1+" ",style="filled",color="white")
+                    m2.add_node(pydot.Node(p1+" ",label=p1+" ",shape="circle",style="filled",fillcolor="darkolivegreen3"))
                     self.graph1.add_subgraph(m2)
-                    self.graph1.add_edge(pydot.Edge(name1, p1, fontsize="10.0"))
+                    self.graph1.add_edge(pydot.Edge(name1+" ", p1+" ", fontsize="10.0"))
             else:
                 wd40=0
         for name1 in reldata:
             if(name1!="data.json" and name1!="func.json" and name1!="cls.json" and name1!="relfunc.json" ):
-                n2=pydot.Cluster(label=name1,style="filled",color="white")
-                n2.add_node(pydot.Node(name1,label=name1,shape="circle",style="filled",fillcolor="darkolivegreen3"))
+                n2=pydot.Cluster(label=name1+" ",style="filled",color="white")
+                n2.add_node(pydot.Node(name1+" ",label=name1+" ",shape="circle",style="filled",fillcolor="darkolivegreen3"))
                 self.graph1.add_subgraph(n2)
 
                 for p1 in reldata[name1]:
-                    m2=pydot.Cluster(label=p1,style="filled",color="white")
-                    m2.add_node(pydot.Node(p1,label=p1,shape="circle",style="filled",fillcolor="darkolivegreen4"))
+                    m2=pydot.Cluster(label=p1+" ",style="filled",color="white")
+                    m2.add_node(pydot.Node(p1+" ",label=p1+" ",shape="circle",style="filled",fillcolor="darkolivegreen4"))
                     self.graph1.add_subgraph(m2)
-                    self.graph1.add_edge(pydot.Edge(name1, p1, fontsize="10.0"))
+                    self.graph1.add_edge(pydot.Edge(name1+" ", p1+" ", fontsize="10.0"))
             else:
                 wd40=0
 

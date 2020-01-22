@@ -7,17 +7,26 @@
   },
   "TestConv.py": {
     "__init__(self)": 1,
-    "def": 8,
+    "def": 11,
     "test_file_getter_get_files_size(self)": 1,
     "test_cls_getter_get_cls_size(self)": 1,
     "test_func_getter_get_func_size(self)": 1,
-    "test_word_getter_get_word_size(self)": 1
+    "test_word_getter_get_word_size(self)": 1,
+    "test_cls_getter_save_to_dict(self)": 1,
+    "test_func_getter_save_to_dict(self)": 1,
+    "test_word_getter_save_to_dict(self)": 1
   },
   "control.py": {
     "__init__(self)": 1,
     "def": 3,
     "askForGraphType(self)": 1,
     "drawCombinationOfGraph(self)": 1
+  },
+  "relFunGetter.py": {
+    "__init__(self)": 1,
+    "def": 3,
+    "saveClsToDict(self,fil,": 1,
+    "relFunc(self,lines)": 1
   },
   "func.json": {},
   "cls.json": {},
@@ -49,10 +58,9 @@
   "relfunc.json": {},
   "clsGetter.py": {
     "__init__(self)": 1,
-    "def": 6,
-    "getFiles(self)": 1,
-    "getCls(self,": 1,
+    "def": 4,
     "saveClsToDict(self,fil,": 1,
+    "getCls(self,": 1,
     "saveClsDictToJson(self)": 1
   },
   "main.py": {

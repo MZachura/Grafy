@@ -6,28 +6,33 @@
     "func.json": 3
   },
   "TestConv.py": {
-    "lines": 76,
+    "lines": 106,
     "unittest": 3,
     "pydot": 1,
-    "clsGetter": 7,
-    "fileGetter": 13,
-    "funcGetter": 4,
-    "wordGetter": 4
+    "clsGetter": 11,
+    "fileGetter": 22,
+    "funcGetter": 8,
+    "wordGetter": 8
   },
   "control.py": {
-    "lines": 169,
+    "lines": 168,
     "graph2": 1,
     "pydot": 17,
     "os": 20
   },
+  "relFunGetter.py": {
+    "lines": 44,
+    "os": 1,
+    "json": 1
+  },
   "func.json": {
-    "lines": 61
+    "lines": 69
   },
   "cls.json": {
-    "lines": 27
+    "lines": 31
   },
   "data.json": {
-    "lines": 68
+    "lines": 73
   },
   "graph2.py": {
     "lines": 275,
@@ -52,9 +57,9 @@
     "lines": 43
   },
   "clsGetter.py": {
-    "lines": 157,
-    "os": 2,
-    "json": 18,
+    "lines": 50,
+    "os": 1,
+    "json": 7,
     "cls.json": 2
   },
   "main.py": {

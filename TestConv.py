@@ -52,8 +52,38 @@ class TestGetters(unittest.TestCase) :
                 wordGetter.getWords(lines)
         self.assertNotEqual(len(wordGetter.words), 0)
 
+    def test_cls_getter_save_to_dict(self) :
+        clsGetter = ClsGetter()
+        fileGetter = FileGetter()
+        fileGetter.getFiles()
+        for fil in fileGetter.files:
+            if 'pyparsing.py' not in str(fil):
+                lines = tuple(open(str(fil), 'r', encoding='latin-1'))
+                clsGetter.getCls(lines)
+                clsGetter.saveClsToDict(fil, lines)
+        self.assertNotEqual(len(clsGetter.all_cls_dict), 0)
 
+    def test_func_getter_save_to_dict(self) :
+        funcGetter = FuncGetter()
+        fileGetter = FileGetter()
+        fileGetter.getFiles()
+        for fil in fileGetter.files:
+            if 'pyparsing.py' not in str(fil):
+                lines = tuple(open(str(fil), 'r', encoding='latin-1'))
+                funcGetter.getFunc(lines)
+                funcGetter.saveFuncsToDict(fil, lines)
+        self.assertNotEqual(len(funcGetter.all_func_dict), 0)
 
+    def test_word_getter_save_to_dict(self) :
+        wordGetter = WordGetter()
+        fileGetter = FileGetter()
+        fileGetter.getFiles()
+        for fil in fileGetter.files:
+            if 'pyparsing.py' not in str(fil):
+                lines = tuple(open(str(fil), 'r', encoding='latin-1'))
+                wordGetter.getWords(lines)
+                wordGetter.saveWordsToDict(fil, lines)
+        self.assertNotEqual(len(wordGetter.fhmap), 0)
 
         # def test_get_words_size(self) :
     #     self.converter = Conv()

@@ -12,6 +12,10 @@
   "control.py": {
     "Control:": 1
   },
+  "relFunGetter.py": {
+    "FuncGetter:": 1,
+    "RelFuncGetter:": 1
+  },
   "graph2.py": {
     "Graph2:": 1
   },
