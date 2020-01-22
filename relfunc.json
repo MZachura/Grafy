@@ -38,6 +38,16 @@
   "test_word_getter_get_word_size(self)": {
     "getFiles(self)": 1,
     "getWords(self,": 1
+  },
+  "test_func_getter_save_to_dict(self)": {
+    "getFiles(self)": 1,
+    "getFunc(self)":1 ,
+    "saveFuncsToDict(fil,": 1
+  },
+  "test_cls_getter_save_to_dict(self)": {
+    "getFiles(self)": 1,
+    "getWords(self)": 1,
+    "saveWordsToDict(fil,": 1
   }
 
 }

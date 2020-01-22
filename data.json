@@ -15,7 +15,7 @@
     "wordGetter": 8
   },
   "control.py": {
-    "lines": 168,
+    "lines": 170,
     "graph2": 1,
     "pydot": 17,
     "os": 20
@@ -35,7 +35,7 @@
     "lines": 73
   },
   "graph2.py": {
-    "lines": 275,
+    "lines": 272,
     "json": 27,
     "pydot": 76,
     "data.json": 14,
@@ -54,7 +54,7 @@
     "os": 2
   },
   "relfunc.json": {
-    "lines": 43
+    "lines": 55
   },
   "clsGetter.py": {
     "lines": 50,

@@ -112,6 +112,7 @@ class Control:
             self.graph.drawGraph()
             self.graph.drawGrafModulu()
             self.graph.drawGrafFunkcji()
+            self.graph.drawGrafFunkcjaPlik()
             self.graph.graph1.write_png("graf.png")
             print("wersja: ")
             cmd = 'git log --pretty=%H -1'
@@ -146,6 +147,7 @@ class Control:
             self.graph.drawGraphPar()
             self.graph.drawGrafModuluPar()
             self.graph.drawGrafFunkcjiPar()
+            self.graph.drawGrafFunkcjaPlikPar()
             self.graph.graph1.write_png("graf.png")
             print("wersja: ")
             cmd = 'git log --pretty=%H -1'

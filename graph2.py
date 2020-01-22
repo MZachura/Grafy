@@ -112,7 +112,7 @@ class Graph2:
                             self.graph1.add_edge(pydot.Edge(a, p,label=datastore[name][p], fontsize="10.0"))
 
 
-
+#problem
     def drawGrafFunkcji(self) :
         datastore = self.datastore1;
         fundata = self.fundata1;
@@ -122,15 +122,15 @@ class Graph2:
 
         for name1 in fundata:
             if(name1!="data.json" and name1!="func.json" and name1!="cls.json" and name1!="relfunc.json" ):
-                n2=pydot.Cluster(label=name1,style="filled",color="white")
-                n2.add_node(pydot.Node(name1,label=name1+" ",shape="circle",style="filled",fillcolor="white"))
+                n2=pydot.Cluster(label=name1+" ",style="filled",color="white")
+                n2.add_node(pydot.Node(name1+" ",label=name1+" ",shape="circle",style="filled",fillcolor="white"))
                 self.graph1.add_subgraph(n2)
 
                 for p1 in fundata[name1]:
-                    m2=pydot.Cluster(label=p1,style="filled",color="white")
-                    m2.add_node(pydot.Node(p1,label=p1,shape="circle",style="filled",fillcolor="white"))
+                    m2=pydot.Cluster(label=p1+" ",style="filled",color="white")
+                    m2.add_node(pydot.Node(p1+" ",label=p1+" ",shape="circle",style="filled",fillcolor="white"))
                     self.graph1.add_subgraph(m2)
-                    self.graph1.add_edge(pydot.Edge(name1, p1, fontsize="10.0"))
+                    self.graph1.add_edge(pydot.Edge(name1+" ", p1+" ", fontsize="10.0"))
             else:
                 wd40=0
         for name1 in reldata:
@@ -185,19 +185,21 @@ class Graph2:
 
     def drawGrafModulu(self) :
         clsdata = self.clsdata1
+        fundata = self.fundata1
         z=0
         x=0
         str="z"
         str2="x"
         for namec in clsdata:
             if(namec!="data.json" and namec!="func.json" and namec!="cls.json" and namec!="relfunc.json"):
-                z=pydot.Cluster(label=namec,style="filled",color="white")
-                a=namec+str
-                z.add_node(pydot.Node(a,label=namec,shape="circle",style="filled",fillcolor="white"))
-                self.graph1.add_subgraph(z)
+                for pc in clsdata[namec]:
+                    z=pydot.Cluster(label=pc,style="filled",color="white")
+                    a=pc+str
+                    z.add_node(pydot.Node(a,label=pc,shape="circle",style="filled",fillcolor="white"))
+                    self.graph1.add_subgraph(z)
             else:
                 wd40=0
-            for pc in clsdata[namec]:
+            for pc in fundata[namec]:
                 x=pydot.Cluster(label=pc,style="filled",color="white")
                 b=pc+str2
                 x.add_node(pydot.Node(b,label=pc,shape="circle",style="filled",fillcolor="white"))
@@ -206,19 +208,21 @@ class Graph2:
 
     def drawGrafModuluPar(self) :
         clsdata = self.clsdata1
+        fundata = self.fundata1
         z=0
         x=0
         str="z"
         str2="x"
         for namec in clsdata:
             if(namec!="data.json" and namec!="func.json" and namec!="cls.json" and namec!="relfunc.json"):
-                z=pydot.Cluster(label=namec,style="filled",color="white")
-                a=namec+str
-                z.add_node(pydot.Node(a,label=namec,shape="circle",style="filled",fillcolor="antiquewhite"))
-                self.graph1.add_subgraph(z)
+                for pc in clsdata[namec]:
+                    z=pydot.Cluster(label=pc,style="filled",color="white")
+                    a=pc+str
+                    z.add_node(pydot.Node(a,label=pc,shape="circle",style="filled",fillcolor="antiquewhite"))
+                    self.graph1.add_subgraph(z)
             else:
                 wd40=0
-            for pc in clsdata[namec]:
+            for pc in fundata[namec]:
                 x=pydot.Cluster(label=pc,style="filled",color="white")
                 b=pc+str2
                 x.add_node(pydot.Node(b,label=pc,shape="circle",style="filled",fillcolor="antiquewhite3"))
@@ -255,21 +259,14 @@ class Graph2:
         for name1 in fundata:
             if(name1!="data.json" and name1!="func.json" and name1!="cls.json" and name1!="relfunc.json" ):
                 n1=pydot.Cluster(label=name1,style="filled",color="white")
-                n1.add_node(pydot.Node(name1,label=name1,shape="circle",style="filled",fillcolor="darkolivegreen1"))
+                n1.add_node(pydot.Node(name1,label=name1,shape="circle",style="filled",fillcolor="darkgoldenrod1"))
                 self.graph1.add_subgraph(n1)
 
                 for p1 in fundata[name1]:
 
                     m1=pydot.Cluster(label=p1,style="filled",color="white")
-                    m1.add_node(pydot.Node(p1,label=p1,shape="circle",style="filled",fillcolor="darkolivegreen3"))
+                    m1.add_node(pydot.Node(p1,label=p1,shape="circle",style="filled",fillcolor="darkgoldenrod3"))
                     self.graph1.add_subgraph(m1)
                     self.graph1.add_edge(pydot.Edge(name1, p1, fontsize="10.0"))
             else:
                 wd40=0
-
-
-
-
-
-#ważne info dodawać nazwy do a i b z innym str niż wcześniej! wykombinować co zrobić żeby nie było wd40 XD
-#ostatni graf żeby był automatyczny
