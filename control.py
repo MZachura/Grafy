@@ -124,24 +124,28 @@ class Control:
             self.graph.graph1.write_png("graf.png")
             print("wersja: ")
             cmd = 'git log --pretty=%H -1'
+            os.system(cmd)
         elif self.option == 12:
             self.graph.graph1 = pydot.Dot(graph_type='digraph')
             self.graph.drawGrafModuluPar()
             self.graph.graph1.write_png("graf.png")
             print("wersja: ")
             cmd = 'git log --pretty=%H -1'
+            os.system(cmd)
         elif self.option == 13:
             self.graph.graph1 = pydot.Dot(graph_type='digraph')
             self.graph.drawGrafFunkcjiPar()
             self.graph.graph1.write_png("graf.png")
             print("wersja: ")
             cmd = 'git log --pretty=%H -1'
+            os.system(cmd)
         elif self.option == 14:
             self.graph.graph1 = pydot.Dot(graph_type='digraph')
             self.graph.drawGrafFunkcjaPlikPar()
             self.graph.graph1.write_png("graf.png")
             print("wersja: ")
             cmd = 'git log --pretty=%H -1'
+            os.system(cmd)
         elif self.option == 15:
             self.graph.graph1 = pydot.Dot(graph_type='digraph')
             self.graph.drawGraphPar()
